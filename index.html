@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora IMC</title>
+    <script>
+       
+    
+        function click_calcular() {
+          let Peso = document.getElementById("txtPeso").value;
+          let Altura = document.getElementById("txtAltura").value;
+          if (Peso == ""){
+            alert("Informe o peso");
+          }else if (Altura== ""){
+            alert("Informe a altura");
+          }else{
+            let IMC = Number(Peso) + Number(Altura);
+            document.getElementById("txtIMC").value = IMC;
+            
+          }
+        }
+    
+        function click_limpar() {
+          document.getElementById("txtPeso").value = "";
+          document.getElementById("txtAltura").value = "";
+          document.getElementById("txtIMC").value = "";
+          
+        }
+    
+    
+      </script>
+</head>
+<body>
+ 
+
+  <form>
+    <div>
+      <label for="txtPeso">Peso:</label>
+      <input type="number" name="" id="txtPeso">
+    </div>
+    <div>
+      <label for="txtALtura">Altura:</label>
+      <input type="number" name="" id="txtAltura">
+    </div>
+    <div>
+      <label for="txtIMC">IMC: </label>
+      <input type="number" name="" id="txtIMC" disabled>
+    </div>
+    <div>
+      <input type="button" value="Calcular" onclick="click_calcular();">
+
+      <input type="button" value="Limpar" onclick="click_limpar();">
+    </div>
+  </form>
+
+</body>
+</html>
