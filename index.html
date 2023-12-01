@@ -1,83 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora IMC</title>
-    <script>
-        function click_calcular() {
-          let Peso = document.getElementById("txtPeso").value;
-          let Altura = document.getElementById("txtAltura").value;
-          if (Peso == ""){
-            alert("Informe o peso");
-          }else if (Altura== ""){
-            alert("Informe a altura");
-          }else{
-            let IMC = Number(Peso) / (Number(Altura) * Number(Altura));
-            document.getElementById("txtIMC").value = IMC;
-          }
-        }
-        function click_limpar() {
-          document.getElementById("txtPeso").value = "";
-          document.getElementById("txtAltura").value = "";
-          document.getElementById("txtIMC").value = "";
-        }
-      </script>
-      <style>
-        form{
-          margin-left: 780px;
-          margin-right: 500px;
-        }
-        h1{
-          margin-left: 830px;
-          margin-right: 500px;
-          margin-top: 300px;
-          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-          
-        }
-        label, input{
-          margin-bottom: 10px;
-          font-size: larger;
-          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-          
-        }
-        .botao{
-          display: grid;
-          grid-template-rows: auto;
-          width: 400px;
-          border-radius: 10px;
-          color : white;
-          background-color: rgb(152, 5, 189);
-          font-size: larger;
-        }
-        input{
-          border-radius: 8px;
-          text-align: center;
-        }
-      </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="java.js" defer></script>
 </head>
+
 <body>
- 
-<h1>Calculadora IMC</h1>
-  <form>
-    <div>
-      <label for="txtPeso">Peso(kg):</label>
-      <input type="number" name="" id="txtPeso">
+  <div id="calc">
+    <h3>Calculadora</h3>
+    <div id="operations">
+      <div id="previous-operation"></div>
+      <div id="current-operation"></div>
     </div>
-    <div>
-      <label for="txtALtura">Altura(metros):</label>
-      <input type="number" name="" id="txtAltura">
-    </div>
-    <div>
-      <label for="txtIMC">IMC: </label>
-      <input type="number" name="" id="txtIMC" disabled>
-    </div>
-    <div>
-      <input class="botao" type="button" value="Calcular" onclick="click_calcular();">
+    <div id="buttons-container">
+      <button>ce</button>
+      <button>c</button>
+      <button>del</button>
+      <button>/</button>
 
-      <input class="botao" type="button" value="Limpar" onclick="click_limpar();">
+      <button class="number">0</button>
+      <button class="number">1</button>
+      <button class="number">2</button>
+      <button class="number">3</button>
+      <button class="number">4</button>
+      <button class="number">5</button>
+      <button class="number">6</button>
+      <button class="number">7</button>
+      <button class="number">8</button>
+      <button class="number">9</button>
+      <button>*</button>
+      <button>+</button>
+      <button>-</button>
+      <button class="number">.</button>
+      <button id="equal-btn">=</button>
     </div>
-  </form>
-
+  </div>
 </body>
+
 </html>
